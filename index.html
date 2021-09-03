@@ -4,10 +4,6 @@
     <meta charset="utf-8"/>
     <title>HTML5</title>
 
-    <!--
-  <script src="../js/main.js"></script>
-    -->
-
     <style>
         article, aside, details, figcaption, figure, footer,header,
         hgroup, menu, nav, section { display: block; }
@@ -19,21 +15,19 @@
 
     <script type="module">
 
-        import {addContentCSV} from './js/main.js';
+        import {CSVLoader} from '../js/load.js';
 
         const urlAllOKTMo = "https://rosstat.gov.ru/opendata/7708234640-oktmo/data-20210701-structure-20150128.csv";
-        const urlSmallOKTMO = "http://127.0.0.1:8080/data/smll.csv";
+        const urlSmallOKTMO = "http://127.0.0.1:8080/data/small.csv";
 
-        /* let promise = addContentCSV(urlSmallOKTMO);
+        //CSVLoader.loadFetch(urlSmallOKTMO);
 
-        promise.then(
-            result => alert(`${script.src} загружен!`),
-            error => alert(`Ошибка: ${error.message}`)
-        );
+        //CSVLoader.loadAsync(urlSmallOKTMO);
 
-        promise.then(() => alert('Ещё один обработчик...')); */
-
-        addContentCSV(urlSmallOKTMO);
+        CSVLoader.loadPromise(urlSmallOKTMO).then(
+        p => alert(`${p.path} загружен!`),
+        error => alert(`Ошибка: ${error.message}`)
+    );
 
     </script>
 
