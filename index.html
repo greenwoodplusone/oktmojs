@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>HTML5</title>
+
+    <!--
+  <script src="../js/main.js"></script>
+    -->
+
+    <style>
+        article, aside, details, figcaption, figure, footer,header,
+        hgroup, menu, nav, section { display: block; }
+    </style>
+
+</head>
+
+<body>
+
+    <script type="module">
+
+        import {addContentCSV} from './js/main.js';
+
+        const urlAllOKTMo = "https://rosstat.gov.ru/opendata/7708234640-oktmo/data-20210701-structure-20150128.csv";
+        const urlSmallOKTMO = "http://127.0.0.1:8080/data/smll.csv";
+
+        /* let promise = addContentCSV(urlSmallOKTMO);
+
+        promise.then(
+            result => alert(`${script.src} загружен!`),
+            error => alert(`Ошибка: ${error.message}`)
+        );
+
+        promise.then(() => alert('Ещё один обработчик...')); */
+
+        addContentCSV(urlSmallOKTMO);
+
+    </script>
+
+</body>
